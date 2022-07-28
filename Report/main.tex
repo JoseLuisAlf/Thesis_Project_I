@@ -1,0 +1,226 @@
+\documentclass[a4paper,oneside,openright,12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{fancyhdr}%encabezados
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{apacite} %bibliografia
+%\usepackage[none]{hyphenat}% no permite romper las palabras largas
+%\usepackage{natbib}
+\usepackage{enumerate}
+\usepackage{amsmath}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\graphicspath{{Images/}{../Images/}}
+\usepackage[rightcaption]{sidecap}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption} % Para poner leyendas en las imágenes
+\captionsetup{justification=default,labelfont=bf,textfont=default}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfigure}
+\usepackage{float}
+%\usepackage{url}
+\inputencoding{latin1}
+%\usepackage{bibentry}%bibliografia
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{wrapfig}
+%\usepackage{cite} % para contraer referencias
+\usepackage{vmargin}% margenes
+\usepackage{blindtext}
+\usepackage{mathrsfs}
+\usepackage{verbatim} % comentarios
+\usepackage{tensor}
+\usepackage[usenames]{color}
+\inputencoding{utf8}
+\usepackage{upgreek}
+\usepackage{bbm}
+%\usepackage{titling}
+%\usepackage{listings}
+%\usepackage{cite}
+\usepackage{lipsum} % Borrar después
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfiles} % Para incluir sub-archivos al archivo main (principal)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{comment} % Para comentar en bloque
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[nottoc,notlot,notlof]{tocbibind} % Para que la bibliografía aparezca en el índice de contenidos y no como capítulo o sección.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{subfigure} % subfiguras
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float} % Para qué?
+%\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+%\usepackage{natbib}
+%\usepackage{bibentry}
+
+%%%%%%%%%%%%%%%% MARGENES%%%%%%%%%%%%%%%%%
+\setpapersize{A4}
+\setmargins{2.5cm}   % margen izquierdo
+{1.5cm}              % margen superior
+{16.5cm}             % anchura del texto
+{23.42cm}            % altura del texto
+{10pt}               % altura de los encabezados
+{1cm}                % espacio entre el texto y los encabezados
+{0pt}                % altura del pie de página
+{2cm}                % espacio entre el texto y el pie de página
+
+%%%%%%%%%%%%%% ENCABEZADOS %%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\headrulewidth}{0.5pt} 
+
+% pie de pagina
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+
+% primera pagina de un capitulo
+\fancypagestyle{plain}{
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{\thepage}
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{fancy}
+
+%%%%%PAGINA INICIAL%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\begin{center}
+
+\begin{figure}[h]
+            \centering
+            \includegraphics[width=4cm, height=5cm]{Logo_UNI.jpg}
+            %\caption{}
+            %\label{fig:my_label}
+        \end{figure}
+
+        \huge{UNIVERSIDAD NACIONAL DE INGENIERÍA} \\
+        \vspace{0.5cm}
+        \Huge{Facultad de Ciencias} \\
+        \vspace{0.5cm}
+        \LARGE{Escuela Profesional de Física}
+        
+        \vspace{2cm}
+        
+        \Large{Proyecto de Tesis I}
+        \vspace{1cm}
+        \hline
+        \vspace{1cm}
+        \Huge{\textbf{ Estudio de la condición Bohm para un plasma de borde en un Tokamak}}
+        \vspace{1cm}
+        \hline
+        \vspace{1cm}
+        
+\end{center}
+    \large{\textit{Autor}}: \hfill \large{\textit{Asesor:}} \\
+	    Campo Espinoza Jose Luis A.\hfill PhD. Paredes Cabrel Alejandro D. \\
+
+        \vspace{1.5cm}
+        
+\begin{center}
+    \Large{Lima, Febrero 2021}
+\end{center}
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RESUMEN %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{Roman} % para comenzar la numeración de paginas en números romanos
+\chapter*{Resumen} % si no queremos que añada la palabra "Capitulo"
+\addcontentsline{toc}{section}{Resumen} % si queremos que aparezca en el índice
+\markboth{RESUMEN}{RESUMEN} % encabezado
+%--------------------------------------------------------------
+En el siguiente trabajo se abordará el estudio de la condición de Bohm para un plasma de borde en un Tokamak. Partiremos de la descripción del cuarto estado de la materia, y más abundante en el universo, denominado Plasma. Se analizarán sus propiedades, y utilizando modelos simplificados, se verá cómo estos surgen de la naturaleza de la interacción eléctrica, junto con el análisis estadístico del sistema. Luego, se dará una introducción a la fusión nuclear y los conceptos fundamentales para entender dicho fenómeno. Posteriormente, se describirán las reacciones de fusión controladas y los mecanismos de contención y control del plasma, en específico, en reactores de fusión tipo Tokamak. Se estudiarán algunos conceptos importantes involucrados en el proceso, y cómo ciertas magnitudes físicas nos pueden dar un criterio para calificar el estado de la reacción dentro de un reactor de fusión. Finalmente, se estudiará, de manera simplificada, la interacción plasma-pared que se da dentro del reactor, y cómo la distribución y dinámica del sistema da lugar a que los iones en el plasma, se aceleren hasta velocidades sónicas características en el plasma, lo que se conoce como condición de Bohm, para el caso de iones fríos (\mathrm{$T_i = 0$}) e iones calientes (\mathrm{$T_i \neq 0$}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ÍNDICE %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents % indice de contenidos
+%\cleardoublepage
+%%  \addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+%%   \listoffigures % indice de figuras
+\setcounter{secnumdepth}{3} %para que ponga 1.1.1.1 en subsubsecciones
+%\setcounter{tocdepth}{3} % para que ponga subsubsecciones en el indice
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+%\listoftables % indice de tablas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULO 1 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introducción}\label{cap.intro}
+	% encabezados
+	\lhead[\thepage]{CAPÍTULO \thechapter. \rightmark}
+	\rhead[CAPÍTULO \thechapter. \leftmark]{\thepage}
+	%\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+    \pagenumbering{arabic}
+    \subfile{Capitulos/1.Introduccion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULO 2 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{El plasma y sus propiedades básicas}
+\lhead[\thepage]{CAPÍTULO \thechapter. \rightmark}
+	\rhead[CAPÍTULO \thechapter. \leftmark]{\thepage}
+	%\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+	%\pagenumbering{arabic}
+	
+	\subfile{Capitulos/2.El_plasma_y_sus_propiedades_basicas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULO 3 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Fundamentos de la fusión nuclear}
+\lhead[\thepage]{CAPÍTULO \thechapter. \rightmark}
+	\rhead[CAPÍTULO \thechapter. \leftmark]{\thepage}
+	%\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+	%\pagenumbering{arabic}
+	
+	 \subfile{Capitulos/3.Fundamentos_de_la_fusion_nuclear}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULO 4 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Reacción de fusión nuclear controlada}
+\lhead[\thepage]{CAPÍTULO \thechapter. \rightmark}
+	\rhead[CAPÍTULO \thechapter. \leftmark]{\thepage}
+	%\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+	%\pagenumbering{arabic}
+
+    \subfile{Capitulos/4.Reaccion_de_fusion_nuclear_controlada}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULO 5 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Condición de Bohm}
+\lhead[\thepage]{CAPÍTULO \thechapter. \rightmark}
+	\rhead[CAPÍTULO \thechapter. \leftmark]{\thepage}
+	%\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+	%\pagenumbering{arabic}
+	
+    \subfile{Capitulos/5.Condicion_de_Bohm}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPÍTULO 6 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Conclusiones}
+\lhead[\thepage]{CAPÍTULO \thechapter. \rightmark}
+	\rhead[CAPÍTULO \thechapter. \leftmark]{\thepage}
+	%\markboth{INTRODUCCIÓN}{INTRODUCCIÓN}
+	%\pagenumbering{arabic}
+	
+    \subfile{Capitulos/6.Conclusiones}
+
+%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFÍA %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\bibname}{Bibliografía}
+\bibliographystyle{apacite} % Cambia el estilo de la citación
+\bibliography{bibliografia.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
